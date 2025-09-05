@@ -10,9 +10,13 @@ int main() {
 
     printf("DIGITAL CLOCK\n");
 
-    while (isRunning)
+    while (true)
     {
-        sleep();
+        time(&now);
+        timep = localtime(&now);
+        printf("\r%02d:%02d:%02d",timep->tm_hour, timep->tm_min, timep->tm_sec);
+        
+        Sleep(1000);
         
     }
     
